@@ -5,6 +5,56 @@
       box-sizing: border-box;
   }
   
+  .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #003973, #E5E5BE);
+      color: #fff;
+  }
+  
+  .login-container h2 {
+      margin: 20px;
+  }
+  
+  .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  .login-form input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      background-color: transparent;
+      color: #fff;
+  }
+  
+  .login-form button {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #003973;
+      color: #fff;
+      cursor: pointer;
+  }
+  
+  .logout-button {
+      margin-bottom: 20px;
+      padding: 8px 16px;
+      background-color: #003973;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+  }
+  
   .container {
       display: flex;
       align-items: center;

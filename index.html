@@ -2,26 +2,37 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width = device-width, initial-scale = 1">
-    <title> todo list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To-do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="todo-app">
-            <h2>To-do List</h2>
-            <div class="row">
-                <input type="text" id="input-box" placeholder="add your text">
-                <button onclick="addTask()">add</button>
-            </div>
-            <ul id="list-container">
-
-
-
-            </ul>
+    <!-- Login Page Container -->
+    <div class="login-container" id="login-container">
+        <h2>Welcome! Please Log In</h2>
+        <div class="login-form">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Log In</button>
         </div>
     </div>
+
+    <!-- To-do App Container -->
+    <div class="container" id="todo-container" style="display: none;">
+        <div class="todo-app">
+            <h2>To-do List</h2>
+            <button onclick="logout()" class="logout-button">Logout</button>
+            <!-- New Logout Button -->
+
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add your text">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container"></ul>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
