@@ -5,14 +5,49 @@
       box-sizing: border-box;
   }
   
+  .checked {
+      color: #555;
+      /* Change the text color for completed tasks */
+      text-decoration: line-through;
+      /* Apply strikethrough */
+  }
+  
   .login-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      width: 100%;
       min-height: 100vh;
       background: linear-gradient(135deg, #003973, #E5E5BE);
       color: #fff;
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      transform: translateY(0);
+      opacity: 1;
+  }
+  
+  .visible {
+      transform: translateY(0);
+      /* Move to original position */
+      opacity: 1;
+      /* Fully visible */
+      display: flex;
+      /* Show as flex container */
+  }
+  
+  .hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-100%);
+  }
+  
+  .hidden-container {
+      transform: translateY(-100%);
+      /* Slide up out of view */
+      opacity: 0;
+      /* Fully transparent */
+      pointer-events: none;
+      /* Prevent interaction */
   }
   
   .login-container h2 {
@@ -34,6 +69,13 @@
       color: #fff;
   }
   
+  input::placeholder {
+      font-size: 15px;
+      /* Change this value to increase or decrease size */
+      color: #555 opacity: 0.8;
+      /* Adjust opacity for a softer appearance */
+  }
+  
   .login-form button {
       padding: 10px;
       font-size: 16px;
@@ -46,6 +88,7 @@
   
   .logout-button {
       margin-bottom: 20px;
+      width: 100px;
       padding: 8px 16px;
       background-color: #003973;
       color: #fff;
@@ -56,21 +99,45 @@
   }
   
   .container {
-      display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
       min-height: 100vh;
       background: linear-gradient(135deg, #003973, #E5E5BE);
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      display: flex;
+  }
+  
+  .delete-button {
+      margin-left: 10px;
+      /* Space between task text and delete button */
+      color: red;
+      /* Color of the delete button */
+      cursor: pointer;
+      /* Change cursor to pointer */
+      font-weight: bold;
+      /* Make it stand out */
+      font-size: 20px;
+      /* Adjust size as needed */
   }
   
   .todo-app {
+      display: flex;
+      flex-direction: column;
       width: 100%;
       max-width: 540px;
       background: #fff;
       margin: 100px auto 20px;
       padding: 40px 30px 70px;
       border-radius: 10px;
+      opacity: 1;
+      /* Start as invisible for transition */
+      transition: opacity 0.5s ease-in-out;
+  }
+  
+  .todo-app.visible {
+      opacity: 1;
+      /* Make it visible when the 'visible' class is added */
   }
   
   .todo-app h2 {
@@ -129,7 +196,8 @@
       height: 28px;
       width: 28px;
       border-radius: 50%;
-      background-image: url(unchecked.png);
+      background-image: url(sally.png);
+      background-size: contain;
       background-blend-mode: soft-light;
       background-size: cover;
       top: 12px;
