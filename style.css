@@ -5,6 +5,10 @@
       box-sizing: border-box;
   }
   
+  body {
+      background: linear-gradient(135deg, #003973, #E5E5BE);
+  }
+  
   .checked {
       color: #555;
       /* Change the text color for completed tasks */
@@ -21,7 +25,7 @@
       min-height: 100vh;
       background: linear-gradient(135deg, #003973, #E5E5BE);
       color: #fff;
-      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      transition: transform 0.5s ease-in-out, opacity 0.3s ease;
       transform: translateY(0);
       opacity: 1;
   }
@@ -33,12 +37,14 @@
       /* Fully visible */
       display: flex;
       /* Show as flex container */
+      z-index: 1;
   }
   
   .hidden {
       opacity: 0;
       pointer-events: none;
       transform: translateY(-100%);
+      z-index: 0;
   }
   
   .hidden-container {
@@ -104,7 +110,7 @@
       width: 100%;
       min-height: 100vh;
       background: linear-gradient(135deg, #003973, #E5E5BE);
-      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      transition: transform 0.5s ease-in-out, opacity 0.3s ease;
       display: flex;
   }
   
@@ -132,11 +138,13 @@
       border-radius: 10px;
       opacity: 1;
       /* Start as invisible for transition */
-      transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.3s ease, transform 0.5s ease;
+      transform: translateY(20px);
   }
   
   .todo-app.visible {
       opacity: 1;
+      transform: translateY(0)
       /* Make it visible when the 'visible' class is added */
   }
   
